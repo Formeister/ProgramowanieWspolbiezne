@@ -1,0 +1,8 @@
+   Na komputerze o adresie internetowym 153.19.1.202 uruchomiony jest serwer
+   prostej funkcji arytmetycznej, który przez port UDP o numerze 5000
+   przyjmuje jedną liczbę całkowitą czterobajtową (int) i w odpowiedzi
+   odsyła jedną liczbę tego samego typu. Napisać program klienta, który
+   komunikuje się z tym serwerem i odgadnąć, jaką funkcję oblicza serwer.
+
+   UWAGA: pamiętać o przekształcaniu danych i adresu do postaci sieciowej
+          i na odwrót (funkcje htonl() i ntohl() ).

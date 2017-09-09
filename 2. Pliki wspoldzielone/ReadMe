@@ -1,0 +1,41 @@
+   Napisac parę programów tak, aby otrzymać parę klient-serwer
+   składającą się na prosty komunikator tekstowy. Nazwa bufora serwera: dane.
+   Nazwa bufora klienta: wyniki. Buforom przydzielić odpowiednie prawa dostępu
+   (na czas trwania ćwiczeń).
+
+   Serwer działa w pętli nieskończonej, klient tylko jednorazowo (pytanie -
+   odpowiedź). Program klienta jako parametr wywołania otrzymuje nazwę konta,
+   na którym działa serwer.
+
+   Klient przesyła do bufora serwera:
+
+      - nazwę swojego konta;
+      - kolejne linie swojego tekstu wprowadzonego przez użytkownika (dowolnie dużo);
+      - znacznik końca tekstu (kod Esc).
+
+   Serwer po przeczytaniu i wyświetleniu całego tekstu od klienta odsyła klientowi:
+
+      - kolejne linie swojego tekstu (wprowadzone ręcznie przez właściciela serwera);
+      - znacznik końca tekstu (kod Esc).
+
+   Dostęp do bufora serwera powinien być synchronizowany plikiem zamkowym (lockfile)
+   tworzonym przez klienta w katalogu roboczym serwera i usuwanym przez serwer po
+   udzieleniu odpowiedzi klientowi. Jeśli serwer czasowo nie jest dostępny, klient
+   wyświetla w pętli co kilka sekund: "Serwer zajęty, proszę czekać". Wykorzystać
+   w programie klienta następującą konstrukcję:
+
+   ...
+   
+   while (open("ścieżka_dostępu/lockfile",O_CREAT|O_EXCL,0)==-1) {
+      printf("Serwer zajety, prosze czekac\n");
+      sleep( ... );
+   }
+   
+   ...
+
+   Po udzieleniu odpowiedzi serwer usuwa utworzony przez klienta plik lockfile.
+
+   UWAGA: programy należy uruchamiać bezpośrednio na sigmie, aby uniknšć opóźnień
+       związanych z działaniem sieciowego systemu plików. W przypadku wystšpienia
+       problemów przenieść bufory do katalogu /tmp i tam testować programy.
+

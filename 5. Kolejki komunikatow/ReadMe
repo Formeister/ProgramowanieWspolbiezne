@@ -1,0 +1,11 @@
+   Utworzyć program serwera udostępniającego dwie kolejki komunikatów:
+   wejściową i wyjściową, oraz program klienta przesyłającego pojedyncze
+   zapytanie z PID-em swojego procesu jako identyfikatorem komunikatu,
+   a następnie odbierającego odpowiedź z drugiej kolejki.
+
+   Serwer realizuje funkcję słownika polsko-angielskiego (otrzymuje łańcuch
+   zawierający słowo polskie i odsyła odpowiadające mu słowo angielskie lub
+   komunikat "Nie znam takiego słowa").
+
+   UWAGA: przyjąć, że numery (klucze) obu kolejek serwera są ustalone
+          i znane klientowi.

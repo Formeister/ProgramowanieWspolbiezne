@@ -1,0 +1,25 @@
+#!/bin/bash
+
+FILE="dane"
+
+while true; do
+   
+   # -f file exists
+   if [[ -f $FILE ]]; then
+      input=`cat $FILE`
+   fi
+
+   # -n inverse of -z (if set && if not empty)
+   if [[ -n $input ]]; then
+
+      cat /dev/null > dane
+
+      let calculation=4*$input+2*$input+$input
+
+      echo $calculation > wynik
+
+   fi
+
+done
+
+exit 0

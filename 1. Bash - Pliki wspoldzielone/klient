@@ -1,0 +1,40 @@
+#!/bin/bash
+
+number=""
+
+input () {
+   # -z unset || set and empty 
+   while [[ -z $number ]] || [[ $number != [0-9] ]]; do
+      read -p "Wprawdź liczbę całkowitą od 0 do 9 : " number
+
+      if [[ $number != [0-9] ]]; then
+	 echo "Wprowadzona wartość musi być liczbą całkowitą w przedziale 0-9!"
+      else
+	 echo $number > dane
+	 printf "Podana liczba została zapisana.\n"
+      fi
+   done
+}
+
+
+result () {
+
+   FILE="wynik"
+
+   # -z unset || set and empty 
+   while [[ -z $result ]]; do
+      if [[ -f $FILE ]]; then
+         result=`cat $FILE`
+      fi
+   done
+
+   cat /dev/null > $FILE
+
+   echo "Wynik dla wyrażenia 4*x+2*x+x, gdzie x=$number wynosi $result."
+   input
+}
+
+input
+result
+
+exit 0

@@ -1,0 +1,13 @@
+   Zaprogramowac grę w "kółko i krzyżyk" dla dwóch graczy (plansza - tablica
+   znakowa 3x3, wypełniona spacjami, znakami 'X' lub 'O'). Umieścić planszę
+   w pamięci dzielonej, zapewnić synchronizację dostępu przy użyciu pary
+   semaforów.
+
+   Należy ulepszyć rozwiązanie synchronizacji podane na wykładzie i zrobić
+   JEDEN (uniwersalny) program do użytku obu graczy - wstępną rywalizację
+   o wykonanie pierwszego ruchu (i używanie znaków 'X') wygrywa ten, kto
+   jako pierwszy utworzy tablicę semaforów (wskazówka: ...O_CREAT|O_EXCL ...).
+
+   Program powinien sprawdzać prawidłowość ruchów (wykluczać pola już zajęte
+   i poza planszą), rozpoznawać sytuację wygranej/przegranej/remisu i wyświetlać
+   obu graczom odpowiednie komunikaty.

@@ -1,0 +1,6 @@
+   Napisać program, który wyświetla kolorowe prostokąty na ekranach kilkorga
+   sąsiadów (adresy/nazwy internetowe podawane jako argumenty w linii poleceń -
+   zmienna liczba), a następnie (w oknie tekstowym) odnotowuje czasy (w sekundach),
+   po jakich je zgaszą (naciskając dowolny klucz na klawiaturze).
+
+   WSKAZÓWKA: utworzyć w programie tyle procesów, ile zostało podanych argumentów.
